@@ -1,0 +1,456 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Inter var", "Lato", BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+body > * {
+  font-size: 16px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.link {
+  color: rgba(79, 70, 229, 1);
+  transition-duration: 0.2s;
+  transition-property: color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.link:hover {
+  text-decoration: underline;
+  color: rgba(67, 56, 202, 1);
+}
+
+.__sidebar {
+    --width: var(--sidebar-width);
+    --background-color: #4338ca;
+  
+    --header-content-height: 2rem;
+    --header-padding-top: 1.25rem;
+    --header-padding-bottom: 1.25rem;
+    --header-bg-color: var(--background-color);
+  
+    --footer-content-height: 0px;
+    --footer-padding-top: 0px;
+    --footer-padding-bottom: 0px;
+    --footer-bg-color: var(--background-color);
+  
+    --main-margin-top: 0rem;
+  
+    --link-text-color: #e0e7ff;
+    --link-text-active-color: var(--link-text-color);
+    --link-text-hover-color: var(--link-text-color);
+  
+    --link-bg-color: var(--background-color);
+    --link-bg-active-color: #3730a3;
+    --link-bg-hover-color: #4f46e5;
+  
+    --link-icon-color: #a5b4fc;
+    --link-icon-active-color: var(--link-icon-color);
+    --link-icon-hover-color: var(--link-icon-color);
+  
+    --link-keyboard-focus-color: var(--link-text-color);
+  
+    --title-color: var(--link-text-color);
+    --title-bg-color: var(--background-color);
+  
+    --separator-color: var(--link-bg-active-color);
+  
+    width: var(--width);
+    background-color: var(--background-color);
+    overflow: hidden;
+  }
+  
+  .__sidebar > main {
+    height: calc(
+      100vh - var(--header-content-height) - var(--header-padding-top) -
+        var(--header-padding-bottom) - var(--footer-content-height) -
+        var(--footer-padding-top) - var(--footer-padding-bottom)
+    );
+    overflow-y: auto;
+  }
+  
+  .__sidebar > main hr {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    border: none;
+    border-top: solid 1px var(--separator-color);
+    width: auto;
+  }
+  
+  .__sidebar > main li.title {
+    color: var(--title-color);
+    background-color: var(--title-bg-color);
+    padding: 0.5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    font-weight: 600;
+    border-radius: 0.375rem;
+  }
+  
+  .__sidebar > main ul {
+    margin-top: var(--main-margin-top);
+  }
+  
+  .__sidebar > main ul > li {
+    margin-top: 0.25rem;
+  }
+  
+  .__sidebar > main ul > li:first-child {
+    margin-top: 0;
+  }
+  
+  .__sidebar > main ul > li:last-child {
+    margin-bottom: 0.5rem;
+  }
+  
+  .__sidebar > main ul > li > a {
+    outline: none;
+    color: var(--link-text-color);
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    border-radius: 0.375rem;
+  }
+  
+  .__sidebar > main ul > li > a:focus-visible {
+    box-shadow: inset 0 0 0 2px var(--link-keyboard-focus-color);
+  }
+  
+  .__sidebar > main ul > li > a.active {
+    color: var(--link-text-active-color);
+    background-color: var(--link-bg-active-color);
+  }
+  
+  .__sidebar > main ul > li > a.active > svg {
+    color: var(--link-icon-active-color);
+  }
+  
+  .__sidebar > main ul > li > a:not(.active):hover {
+    color: var(--link-text-hover-color);
+    background-color: var(--link-bg-hover-color);
+  }
+  
+  .__sidebar > main ul > li > a > svg {
+    margin-right: 0.75rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    color: var(--link-icon-color);
+  }
+  
+  .__sidebar > main ul > li > a:not(.active):hover > svg {
+    color: var(--link-icon-hover-color);
+  }
+  
+  .__sidebar > header {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    padding-top: var(--header-padding-top);
+    padding-bottom: var(--header-padding-bottom);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    height: calc(
+      var(--header-content-height) + var(--header-padding-bottom) +
+        var(--header-padding-top)
+    );
+    background-color: var(--header-bg-color);
+    overflow: hidden;
+  }
+  
+  .__sidebar > header > * {
+    max-height: 100%;
+    max-width: 100%;
+  }
+  
+  .__sidebar > footer {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    padding-top: var(--footer-padding-top);
+    padding-bottom: var(--footer-padding-bottom);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    height: calc(
+      var(--footer-content-height) + var(--footer-padding-bottom) +
+        var(--footer-padding-top)
+    );
+    background-color: var(--footer-bg-color);
+    overflow: hidden;
+  }
+  
+  .__sidebar > footer > * {
+    max-height: 100%;
+    max-width: 100%;
+  }
+  
+  .__cover {
+    --width: var(--sidebar-width);
+    opacity: 0;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+    transition-timing-function: linear;
+    transition-duration: 300ms;
+  }
+  
+  @media (max-width: 767px) {
+    .__sidebar {
+      z-index: 2;
+      width: 0;
+      padding: 0;
+      transition-property: width;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 300ms;
+    }
+    .__sidebar.open {
+      width: var(--width);
+    }
+    .__cover.open {
+      background-color: rgb(75, 85, 99);
+      opacity: 0.75;
+      z-index: 1;
+      overflow: hidden;
+    }
+    .__cover > button {
+      margin-top: 10px;
+      margin-left: calc(var(--width) + 10px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 9999px;
+      color: white;
+      background-color: transparent;
+      cursor: pointer;
+      border-width: 0;
+      height: 2.5rem;
+      width: 2.5rem;
+    }
+    .__cover > button:focus {
+      outline: 2px solid transparent;
+      outline-offset: 2px;
+  
+      box-shadow: inset 0 0 0 2px #ffffff;
+    }
+    .__cover > button > svg {
+      height: 1.5rem;
+      width: 1.5rem;
+    }
+  }
+  
+  
+.__sidebar.example4 {
+  --header-content-height: 6rem;
+  --header-padding-top: 1.5rem;
+  --header-padding-bottom: 1.5rem;
+  --footer-content-height: 2rem;
+  --footer-padding-top: 1.25rem;
+  --footer-padding-bottom: 1.25rem;
+  --background-color: #fff;
+  --link-text-color: #4b5563;
+  --link-text-hover-color: #111827;
+  --link-text-active-color: #111827;
+  --link-bg-active-color: #f3f4f6;
+  --link-bg-hover-color: #f9fafb;
+  --link-icon-color: #9ca3af;
+  --link-icon-active-color: #6b7280;
+  --link-icon-hover-color: #6b7280;
+  --separator-color: #e5e7eb;
+}
+
+.__sidebar.example4 > header > .header-content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.__sidebar.example4 > header > .header-content span.avatar {
+  width: 50px;
+  height: 50px;
+  color: #f4f6f8;
+  background-color: #e5e7eb;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  font-size: 1.25rem;
+  align-items: center;
+  flex-shrink: 0;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  line-height: 1;
+  user-select: none;
+  border-radius: 50%;
+  justify-content: center;
+}
+
+.__sidebar.example4 > header > .header-content span.avatar > svg {
+  --icon-color: #fff;
+  height: 30px;
+  width: auto;
+  color: var(--icon-color);
+  fill: var(--icon-color);
+}
+
+.__sidebar.example4 > header > .header-content span.name {
+  margin-top: 0.5rem;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+.__sidebar.example4 > header > .header-content span.role {
+  margin-top: 0.5rem;
+  color: gray;
+  font-size: 0.8rem;
+}

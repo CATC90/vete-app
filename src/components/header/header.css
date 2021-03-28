@@ -1,0 +1,37 @@
+.__header > button.open-sidebar {
+    float: left;
+    border: solid 0px #e5e7eb;
+    background-color: white;
+    cursor: pointer;
+    color: #6b7280;
+    border-right-width: 1px;
+    height: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .__header > button.open-sidebar:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    box-shadow: inset 0 0 0 2px #6366f1;
+  }
+  
+  .__header > button.open-sidebar > * {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+  
+  .__header > span.__title {
+    margin: auto;
+  }
+  
+  .__header > span.__title {
+    margin: auto;
+  }
+  
+  @media (min-width: 768px) {
+    .__header > button.open-sidebar {
+      display: none;
+    }
+  }
+  

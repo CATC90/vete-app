@@ -1,0 +1,92 @@
+.__layout {
+    --sidebar-width: 16rem;
+    --header-height: 4rem;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  @media (min-width: 768px) {
+    .__layout {
+      display: grid;
+      grid-template-columns: var(--sidebar-width) 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: auto 1fr auto;
+    }
+  }
+  
+  .__layout > header {
+    display: flex;
+    /* grid-column: span 8; */
+    grid-column: 2 / 8;
+    height: var(--header-height);
+    /* padding: 30px; */
+    text-align: center;
+    font-size: 1.4em;
+    background-color: #1b76bc;
+    color: white;
+  }
+  
+  .__layout > nav {
+    position: fixed;
+    height: 100vh;
+    /*
+    overflow-y: scroll;
+    background-color: white;
+    padding: 16px;
+    grid-row: 2 / 2;
+    grid-column: 1 / 1;
+    color: black;
+    margin-left: 16px;
+  
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+     */
+  }
+  
+  /* .__layout > nav > ul {
+    margin-top: 20px;
+    list-style-type: none;
+  }
+  
+  .__layout > nav > ul > li {
+    margin-top: 20px;
+    color: hsl(212, 56%, 16%);
+  }
+  
+  .__layout > nav > ul > li > ul {
+    margin-top: 20px;
+    margin-left: 20px;
+    color: hsl(212, 56%, 16%);
+  }
+  
+  .__layout > nav > ul > li > ul > li {
+    margin-top: 20px;
+  } */
+  
+  .__layout > aside {
+    padding: 20px;
+    background-color: rgb(244, 245, 247);
+    grid-row: 2 / 2;
+    grid-column: 2 / 2;
+  }
+  
+  .__layout > main {
+    flex: 1;
+    padding: 32px;
+    grid-row: 2 / 2;
+    grid-column: 2 / 9;
+    background-color: hsl(210, 32%, 93%);
+    overflow-y: auto;
+  }
+  
+  .__layout > footer {
+    grid-column: span 8;
+    padding: 30px;
+    text-align: center;
+    font-size: 1.4em;
+    background-color: #690;
+    color: white;
+  }
+  
